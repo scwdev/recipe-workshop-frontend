@@ -11,22 +11,24 @@ const DisplayRecipe = (props) => {
     }
 
     const handleDelete = () => {
-        console.log(id)
-        props.handleDelete(id)
+        if (window.confirm("Are you sure?")) {
+            props.handleDelete(id)
+            props.history.push('/')
+        }
     }
 
-    console.log(props)
     return (
-        <div>
+        <div className="display-recipe" >
             <h2>{recipe?.name}</h2>
             <p>{recipe?.description}</p>
             <ul>{recipe?.ingredients.map((i) => (<li>{i}</li>))}</ul>
-            <Link to={`${props.match.url}/update`}>
-                <button>Edit</button>
-            </Link>
-            <Link to="/">
-                <button onClick={handleDelete}>Delete</button>
-            </Link>
+            <img src={recipe?.img} height="250px"/>
+            <button onClick={() => {props.history.push(`${props.match.url}/update`)}} className="button" id="edit" >
+                Edit
+            </button>
+            <button onClick={handleDelete} className="button" id="delete">
+                Delete
+            </button>
         </div>
     )
 }

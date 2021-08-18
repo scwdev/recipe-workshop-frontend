@@ -1,0 +1,79 @@
+// *
+//     border: 1px solid black
+
+.App
+    text-align: center
+    box-sizing: border-box
+
+body
+    background-image: url("https://res.cloudinary.com/scwd/image/upload/o_50/v1629300988/recipe%20workshop/floured_surface_djyivy.jpg")
+    background-origin: bottom  
+    background-size: cover
+    
+.recipe-list
+    // padding: 2% 2%
+    display: flex
+    // justify-content: space-around
+    overflow-x: scroll
+    margin: 0px
+
+    a    
+        text-decoration: none
+        margin: 1em
+
+        .recipe-link
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 1.4em
+            color: black
+            padding: .5em            
+            height: 3em
+            width: 6em
+            border-radius: .5em
+            list-style-type: none
+            background-position: center
+            background-size: cover
+            background-color: white
+
+.button
+    font-size: 1.4em
+    text-decoration: none
+    color: black
+    background-color: ghostwhite
+    display: inline-block
+    padding: .25em
+    margin: .5em
+    border-radius: .25em
+    border: 1px solid black
+
+.display-recipe
+    margin: 1em
+    display: grid
+    grid-template-columns: 33% 1fr 1fr
+    grid-template-areas: 'h2 h2 h2' 'img p p' 'img ul ul' 'img edit delete'
+    gap: 1em
+    > *
+        margin: 0px
+        padding: 0px
+    h2
+        grid-area: h2
+    p
+        grid-area: p
+    ul
+        grid-area: ul
+        li
+    img
+        grid-area: img
+        justify-self: center
+        margin: 1em
+    .button
+        width: 50%
+        height: 80%
+        
+    .button#edit
+            grid-area: edit
+            justify-self: right
+    .button#delete
+            grid-area: delete
+            justify-self: left

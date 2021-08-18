@@ -1,4 +1,4 @@
-import './App.css';
+import './App.sass';
 import { useState, useEffect } from "react"
 import { Route, Link, Switch } from "react-router-dom"
 
@@ -60,10 +60,10 @@ function App() {
     <div className="App">
       React App
       <RecipeList recipes={recipes} />
-      <Link to="/newrecipe">
-        <button>
+      <Link to="/newrecipe" className="button" id="add-recipe">
+        {/* <button  > */}
           Add New Recipe!
-        </button>
+        {/* </button> */}
       </Link>
       <Switch>
         <Route exact path="/:name/:id" render={(routerProps) => 

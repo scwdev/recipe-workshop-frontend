@@ -2,14 +2,14 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const RecipeList = (props) => {
-    // console.log(props.recipes.recipes)
     const recipes = props.recipes.map( item => ( item ))
 
     return( 
-        <ul>
+        <ul className="recipe-list" >
             {recipes.map(( item, index ) => (
                 <Link to={ `/${item.name}/${ item._id }` }>
-                    <li key={ item._id }>{ item.name }</li>
+                    <li className="recipe-link" key={ item._id }
+                    style={{backgroundImage: `url(${item.img})`}}>{ item.name }</li>
                 </Link>
             ))}
         </ul>
